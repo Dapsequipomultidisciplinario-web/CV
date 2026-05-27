@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Dionys Peralta Scott - Logística y Conducción</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0f172a; /* Azul oscuro corporativo */
+            --secondary-color: #0d9488; /* Verde/Teal para acentos */
+            --accent-light: #2dd4bf; /* Teal claro para resaltar en fondo oscuro */
+            --text-color: #334155;
+            --light-bg: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #525659;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            color: var(--text-color);
+            gap: 30px;
+        }
+
+        .print-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .print-btn:hover {
+            background-color: #0f766e;
+        }
+
+        .a4-page {
+            background-color: white;
+            width: 215.9mm;
+            min-height: 279.4mm;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 28pt;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.1;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .header h3 {
+            font-size: 11.5pt;
+            font-weight: 500;
+            color: var(--secondary-color);
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        .section-title {
+            font-size: 15pt;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title i {
+            color: var(--secondary-color);
+        }
+
+        .profile-text {
+            font-size: 10.5pt;
+            line-height: 1.6;
+            text-align: justify;
+            color: #475569;
+        }
+
+        .franja-oscura {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px 45px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-horizontal {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 18px;
+            font-size: 9.5pt;
+            font-weight: 300;
+        }
+
+        .contact-horizontal div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-horizontal i {
+            color: var(--accent-light);
+            font-size: 12pt;
+        }
+
+        .competencias-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 30px;
+        }
+
+        .competencia-item {
+            font-size: 9.5pt;
+            color: #cbd5e1;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        .competencia-item strong {
+            color: white;
+            display: block;
+            margin-bottom: 3px;
+            font-size: 10.5pt;
+            font-weight: 500;
+        }
+
+        .competencia-item i {
+            color: var(--accent-light);
+            margin-right: 6px;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+        }
+        
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+            flex-wrap: wrap; 
+            gap: 5px;
+        }
+
+        .experience-header h4 {
+            font-size: 12.5pt;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .experience-header span {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: var(--secondary-color);
+            background-color: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .experience-company {
+            font-size: 11pt;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #64748b;
+        }
+
+        .experience-item ul {
+            padding-left: 20px;
+            font-size: 10pt;
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        .experience-item li {
+            margin-bottom: 6px;
+        }
+
+        .grid-2-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 25px;
+        }
+
+        .styled-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .styled-list li {
+            font-size: 10pt;
+            color: #475569;
+            line-height: 1.5;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .styled-list li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 14pt;
+            position: absolute;
+            left: 0;
+            top: -3px;
+        }
+
+        .styled-list strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .education-item h4 {
+            font-size: 12pt;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .education-item .institution {
+            font-size: 10.5pt;
+            color: #64748b;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        @media screen and (max-width: 850px) {
+            body { padding: 15px; gap: 20px; }
+            .a4-page { width: 100%; height: auto; }
+            .contact-horizontal { flex-direction: column; gap: 12px; }
+            .competencias-grid { grid-template-columns: 1fr; }
+            .grid-2-col { grid-template-columns: 1fr; gap: 25px; }
+            .header h1 { font-size: 24pt; }
+        }
+
+        @media print {
+            @page { size: letter portrait; margin: 0; }
+            body {
+                background-color: white;
+                padding: 0;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                gap: 0;
+                display: block; 
+            }
+            .a4-page {
+                box-shadow: none !important;
+                width: 215.9mm !important;
+                height: 279.4mm !important;
+                page-break-after: always;
+                margin: 0;
+            }
+            .a4-page:last-child { page-break-after: auto; }
+            .contact-horizontal { flex-direction: row !important; }
+            .competencias-grid { grid-template-columns: 1fr 1fr !important; }
+            .grid-2-col { grid-template-columns: 1fr 1fr !important; }
+            .print-btn { display: none !important; }
+            .header h1 { font-size: 28pt !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <button type="button" class="print-btn no-print" onclick="window.print(); return false;">
+        <i class="fas fa-file-pdf"></i> Imprimir / Guardar como PDF
+    </button>
+
+    <!-- ================= PÁGINA 1 ================= -->
+    <div class="a4-page">
+        <!-- BLOQUE 1: Nombre y Perfil -->
+        <div style="padding: 40px 45px 25px 45px;">
+            <div class="header">
+                <h1>DIONYS ALBERTO<br>PERALTA SCOTT</h1>
+                <h3>Conductor Profesional Clase A5 | Operador y Supervisor Logístico<br>RUT: 25.880.671-9 | Nacionalidad: Venezolana (10 años en Chile)</h3>
+            </div>
+
+            <div style="margin-top: 25px;">
+                <h2 class="section-title"><i class="fas fa-user-tie"></i> Perfil Profesional</h2>
+                <p class="profile-text">
+                    <strong>Conductor Profesional Clase A5 y Operador Logístico</strong> con sólida trayectoria combinando la operación de equipos articulados con la supervisión operativa en terreno. Especialista en logística portuaria, administración de depósitos de contenedores y gestión de almacenes en diversos rubros. Destaco por mi capacidad para ejecutar el transporte de carga pesada mientras coordino flujos de suministro crítico, aseguro el control de inventarios en puntos de acopio y gestiono ingresos/retiros en terminales aduaneros. Poseo profundo conocimiento de la conectividad vial de la <strong>Región Metropolitana</strong> y aplico rigurosas políticas de <strong>cero incidentes</strong> y optimización de recursos logísticos.
+                </p>
+            </div>
+        </div>
+
+        <!-- BLOQUE 2: FRANJA OSCURA (Contacto y Competencias Clave) -->
+        <div class="franja-oscura">
+            <div class="contact-horizontal">
+                <div><i class="fas fa-map-marker-alt"></i> Cancha de Carreras 95, comuna de Lampa.</div>
+                <div><i class="fas fa-phone"></i> (+56) 9 2949 1330</div>
+                <div><i class="fas fa-envelope"></i> dionysperalta2@gmail.com</div>
+                <div><i class="fab fa-linkedin"></i> in/dionys-peralta-scott</div>
+            </div>
+
+            <div class="competencias-grid">
+                <div class="competencia-item">
+                    <strong><i class="fa-solid fa-truck-ramp-box"></i> Operación A5 y Gestión de Flotas</strong>
+                    Manejo de articulados, despacho estratégico y planeación de rutas de alta complejidad.
+                </div>
+                <div class="competencia-item">
+                    <strong><i class="fa-solid fa-warehouse"></i> Logística de Almacenes y Depósitos</strong>
+                    Control de inventarios, recepción, almacenamiento y coordinación de insumos industriales.
+                </div>
+                <div class="competencia-item">
+                    <strong><i class="fa-solid fa-anchor"></i> Operaciones Portuarias e Intermodales</strong>
+                    Coordinación de contenedores, documentación aduanera y conexión con terminales marítimos.
+                </div>
+                <div class="competencia-item">
+                    <strong><i class="fa-solid fa-shield-halved"></i> Eficiencia y Continuidad Operativa</strong>
+                    Supervisión en terreno, cumplimiento normativo de pesajes y metas de cero incidentes.
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOQUE 3: Trayectoria (Primera Parte) -->
+        <div style="padding: 25px 45px 40px 45px; flex-grow: 1;">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Trayectoria Laboral</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4>Conductor Profesional A5 - Minería y Logística</h4>
+                    <span>06/2021 – 05/2024</span>
+                </div>
+                <div class="experience-company"><i class="fa-solid fa-building"></i> Transportes Nazar LTDA.</div>
+                <ul>
+                    <li>Operación de camiones articulados aljibe (Scania R500) combinada con la <strong>supervisión en terreno del flujo logístico</strong> para asegurar el suministro continuo de agua industrial en faenas mineras (SQM Iquique).</li>
+                    <li>Planificación de rutas, control de tiempos de ciclo y <strong>coordinación directa en puntos de acopio</strong>, optimizando la rotación y el despacho eficiente de los recursos asignados.</li>
+                    <li>Cumplimiento de metas operativas con cero incidentes, aplicando técnicas de conducción técnica para resguardar los activos de alto tonelaje durante las operaciones de suministro crítico.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= PÁGINA 2 ================= -->
+    <div class="a4-page">
+        <div style="padding: 40px 45px;">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Trayectoria Laboral (Cont.)</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4>Conductor Profesional</h4>
+                    <span>06/2020 – 12/2021</span>
+                </div>
+                <div class="experience-company"><i class="fa-solid fa-building"></i> CCTI Cía. Chilena de Transportes Intermodales S.A.</div>
+                <ul>
+                    <li>Transporte de carga pesada y <strong>coordinación logística intermodal</strong>, conectando de forma directa los centros de distribución de la Región Metropolitana con los principales terminales portuarios (San Antonio, Valparaíso).</li>
+                    <li>Gestión operativa en <strong>depósitos portuarios y aduaneros</strong>, controlando ingresos y retiros, documentación de pesajes, guías de despacho y el estricto cumplimiento de las leyes de pesos y dimensiones.</li>
+                    <li>Desarrollo de planes de ruta seguros en zonas industriales de alta densidad, asegurando la eficiencia en la cadena de suministro y un historial intachable de puntualidad en entregas.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4>Conductor de Ramplas</h4>
+                    <span>03/2017 – 03/2018</span>
+                </div>
+                <div class="experience-company"><i class="fa-solid fa-building"></i> Transportes Navheer</div>
+                <ul>
+                    <li>Operación de equipos pesados Volvo serie FH y <strong>logística de almacén</strong>, coordinando la estiba, trincaje y distribución segura de materiales peligrosos (MATPEL) para el cliente Ceresita.</li>
+                    <li>Control y enlace directo con almacenes centrales para la correcta recepción, verificación y despacho de insumos industriales a nivel interurbano.</li>
+                    <li>Supervisión técnica de la carga bajo la Norma NFPA 704, velando por la correcta distribución de pesos y el cumplimiento riguroso de políticas preventivas y de emergencia química.</li>
+                </ul>
+            </div>
+
+            <!-- Licencias y Referencias en 2 columnas -->
+            <div class="grid-2-col" style="margin-top: 35px;">
+                <div>
+                    <h2 class="section-title"><i class="fas fa-id-card"></i> Licencias y Docs.</h2>
+                    <ul class="styled-list">
+                        <li><strong>Licencias de Conducir:</strong><br>Clase A5 (desde agosto 2014), A3 y B.</li>
+                        <li><strong>Hoja de Vida del Conductor:</strong><br>Intachable y sin anotaciones.</li>
+                        <li><strong>Antecedentes:</strong><br>Sin antecedentes penales ni para fines especiales.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="section-title"><i class="fas fa-address-book"></i> Referencias Profesionales</h2>
+                    <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 10px;">
+                        <div class="education-item" style="margin-bottom: 0;">
+                            <h4>Juan Jaramillo</h4>
+                            <div class="institution" style="margin-bottom: 0; font-size: 10.5pt; color: #475569; display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-phone" style="color: var(--secondary-color);"></i> (+56) 9 4590 1810
+                            </div>
+                        </div>
+                        <div class="education-item" style="margin-bottom: 0;">
+                            <h4>Julio Fuentes</h4>
+                            <div class="institution" style="margin-bottom: 0; font-size: 10.5pt; color: #475569; display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-phone" style="color: var(--secondary-color);"></i> (+56) 9 9616 0836
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.print-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            setTimeout(function() { 
+                window.print(); 
+            }, 100);
+        });
+    </script>
+</body>
+</html>
